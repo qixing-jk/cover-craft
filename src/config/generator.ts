@@ -25,7 +25,13 @@ export const FONT_FAMILIES = [
     { value: '"ZCOOL XiaoWei", serif', label: '站酷小薇' },
     { value: '"ZCOOL KuHei", serif', label: '站酷酷黑体' },
     { value: '"ZCOOL QingKe HuangYou", cursive', label: '站酷庆科黄油体' },
-    { value: '"Ma Shan Zheng", cursive', label: '马善政楷书' }
+    { value: '"Ma Shan Zheng", cursive', label: '马善政楷书' },
+    { value: 'LXGW Bright Medium', label: 'LXGW Bright' },
+    { value: '"HarmonyOS_Regular"', label: '鸿蒙字体', url: 'https://s1.hdslb.com/bfs/static/jinkela/long/font/regular.css' },
+    { value: 'yozai', label: '悠哉字体', url: 'https://chinese-fonts-cdn.deno.dev/packages/yozai/dist/Yozai-Regular/result.css' },
+    { value: '"寒蝉全圆体"', label: '寒蝉全圆体', url: 'https://chinese-fonts-cdn.deno.dev/packages/hcqyt/dist/ChillRoundFRegular/result.css' },
+    { value: 'Douyin Sans', label: '抖音美好体', url: 'https://chinese-fonts-cdn.deno.dev/packages/dymh/dist/DouyinSansBold/result.css' },
+    { value: 'MaokenZhuyuanTi', label: '猫啃珠圆体', url: 'https://chinese-fonts-cdn.deno.dev/packages/mkzyt/dist/ /result.css' }
 ];
 
 export const DEFAULT_SETTINGS = {
