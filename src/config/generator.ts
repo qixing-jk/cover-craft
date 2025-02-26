@@ -5,6 +5,7 @@ export interface CoverSize {
 }
 
 export const PRESET_SIZES: CoverSize[] = [
+    { width: 750, height: 750, label: '闲鱼封面 (750x750)' },
     { width: 730, height: 310, label: '个人博客 (730x310)' },
     { width: 1200, height: 630, label: '社交媒体 (1200x630)' },
     { width: 1920, height: 1080, label: '全高清 (1920x1080)' },
@@ -21,7 +22,6 @@ export const FONT_FAMILIES = [
     { value: 'Great Vibes, cursive', label: 'Great Vibes' },
     { value: 'Satisfy, cursive', label: 'Satisfy' },
     // 中文字体
-    { value: '"Noto Serif SC", serif', label: '思源宋体' },
     { value: '"ZCOOL XiaoWei", serif', label: '站酷小薇' },
     { value: '"ZCOOL KuHei", serif', label: '站酷酷黑体' },
     { value: '"ZCOOL QingKe HuangYou", cursive', label: '站酷庆科黄油体' },
