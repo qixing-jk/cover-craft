@@ -4,6 +4,8 @@ import { Slider } from '@/components/ui/slider';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { FONT_FAMILIES } from '@/config/generator';
 import { useGeneratorStore } from '@/store/generator';
+import { useEffect } from 'react';
+import { loadWebFont } from '@/utils/generator.ts';
 
 export function FontConfig() {
   const {
@@ -20,6 +22,10 @@ export function FontConfig() {
     fontStyle,
     setFontStyle
   } = useGeneratorStore();
+
+  useEffect(() => {
+    loadWebFont()
+  }, []);
 
   return (
     <div className="space-y-4">

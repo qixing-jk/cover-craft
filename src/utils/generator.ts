@@ -1,5 +1,6 @@
 import domtoimage from 'dom-to-image';
 import { saveAs } from 'file-saver';
+import { FONT_FAMILIES } from '@/config/generator.ts';
 
 export const computeBackgroundStyle = (
   backgroundType: string,
@@ -81,4 +82,49 @@ export const exportImage = async (
   } finally {
     setIsExporting(false);
   }
+};
+
+export const loadWebFont = async () => {
+  await loadExternalResource(
+    'https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkaibright/dist/LXGWBright-Medium/result.css',
+    'css'
+  );
+  FONT_FAMILIES.forEach(({ url }) => url && loadExternalResource(url, 'css'));
+};
+
+export const loadExternalResource = (url: string, type = 'js') => {
+  // 检查是否已存在
+  const elements =
+    type === 'js' ? document.querySelectorAll(`[src='${url}']`) : document.querySelectorAll(`[href='${url}']`);
+  return new Promise((resolve, reject) => {
+    if (elements.length > 0 || !url) {
+      resolve(url);
+      return url;
+    }
+    let tag;
+    if (type === 'css') {
+      tag = document.createElement('link');
+      tag.rel = 'stylesheet';
+      tag.href = url;
+    } else if (type === 'font') {
+      tag = document.createElement('link');
+      tag.rel = 'preload';
+      tag.as = 'font';
+      tag.href = url;
+    } else if (type === 'js') {
+      tag = document.createElement('script');
+      tag.src = url;
+    }
+    if (tag) {
+      tag.onload = () => {
+        // console.log('Load Success', url)
+        resolve(url);
+      };
+      tag.onerror = () => {
+        console.warn('Load Error', url);
+        reject(url);
+      };
+      document.head.appendChild(tag);
+    }
+  });
 };
