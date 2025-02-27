@@ -26,7 +26,7 @@ export const FONT_FAMILIES = [
     { value: '"ZCOOL KuHei", serif', label: '站酷酷黑体' },
     { value: '"ZCOOL QingKe HuangYou", cursive', label: '站酷庆科黄油体' },
     { value: '"Ma Shan Zheng", cursive', label: '马善政楷书' },
-    { value: 'LXGW Bright Medium', label: 'LXGW Bright' },
+    { value: 'LXGW Bright Medium', label: 'LXGW Bright',url:'https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkaibright/dist/LXGWBright-Medium/result.css' },
     { value: '"HarmonyOS_Regular"', label: '鸿蒙字体', url: 'https://s1.hdslb.com/bfs/static/jinkela/long/font/regular.css' },
     { value: 'yozai', label: '悠哉字体', url: 'https://chinese-fonts-cdn.deno.dev/packages/yozai/dist/Yozai-Regular/result.css' },
     { value: '"寒蝉全圆体"', label: '寒蝉全圆体', url: 'https://chinese-fonts-cdn.deno.dev/packages/hcqyt/dist/ChillRoundFRegular/result.css' },
